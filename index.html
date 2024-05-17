@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon"
+    href="data:image/png;base64,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" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="s.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <div class="container">
+        <div class="logo">
+          <img class="logo-ss" src="assets/logo0.PNG" width="99px" height="49px" alt="" />
+        </div>
+
+        <div class="loc">
+          <div class="loc-icon">
+            <img src="assets/3.0.PNG" width="15ppx" height="18px" alt="" />
+            <div class="add">
+              <div class="add">
+                <p id="d">Deliver to</p>
+                <p id="i">India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-search">
+          <select class="search-select">
+            <option class="option">All</option>
+          </select>
+          <input placeholder="Search Amazon" class="search-input" />
+          <div class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="lang">
+          <div class="en">
+            <img src="assets/EN2.png" class="EN" width="55px" height="17.5px" alt="" />
+          </div>
+        </div>
+        <div class="text1">
+          <p class="t1">Hello, sign in</p>
+          <div class="t2-">
+            <p class="t2">Account & Lists</p>
+            <img class="dd" src="assets/60995.png" width="9px" alt="" />
+          </div>
+        </div>
+        <div class="text2">
+          <p class="t1">Returns</p>
+          <div class="t2-">
+            <p class="t2">& Orders</p>
+          </div>
+        </div>
+        <div class="cart">
+          <img class="cartimg" src="assets/cart.png" height="28px" width="39px" alt="" />
+          <div class="o">
+            <p>0</p>
+          </div>
+          <div class="t3">
+            <p class="t2">Cart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar-bar">
+      <div class="container2">
+        <div onclick="openNav()" class="all1">
+          <img class="bar" src="assets/bar.png" width="17px" height="14px" alt="" />
+          <p class="all2">All</p>
+          </a>
+        </div>
+        <div class="pannel">
+          <div class="pannel-ops">
+            <a href="#">
+              <p class="p1">Today's Deals</p>
+              <p class="p1">Customer Service</p>
+              <p class="p1">Registry</p>
+              <p class="p1">Gift Cards</p>
+              <p class="p1">Sell</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div onclick="closeNav()" class="overlay" id="over-lay"></div>
+  <div onclick="closeNav()" class="xx" id="xxx"><i class="fa-solid fa-xmark"></i></i></div>
+  <div class="side-bar" id="mysidenav">
+    <div class="side-bar-heder">
+      <div class="user-icon">
+        <i class="fa-solid fa-circle-user"></i>
+      </div>
+      <p>Hello, sign in</p>
+    </div>
+    <div class="main-con">
+      <div class="side-bar-con-header">Digital Content & Devices</div>
+
+      <div class="sidenavrow">
+        <div>Amazon Music</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Kindle E-readers & Books</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Amazon Appstore</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <hr>
+      <div class="side-bar-con-header">Shop by Department</div>
+
+      <div class="sidenavrow">
+        <div>Electronics</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Computer</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Smart Home</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Arts & Crafts</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <hr>
+      <div class="sidenavrow">
+        <div>Automotive</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Baby</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Beauty and Personal Care</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Women's Fashion</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Men's Fashion</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Boys' Fashion</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Health and Household</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Home and Kitchen</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Industrial and Scientific</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Sports and Outdoors</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Software</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Toys and Games</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>Video Games</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+      <div class="sidenavrow">
+        <div>See less</div>
+        <i class="fa-solid fa-chevron-right" style="color: #8e9090"></i>
+      </div>
+
+    </div>
+  </div>
+
+
+  <section>
+    <div class="slider">
+      <div class="mask1">
+        <div class="slider-img-list">
+          <img src="assets/1.jpg" class="slider-img" alt="">
+          <img src="assets/2.jpg" class="slider-img" alt="">
+          <img src="assets/3.jpg" class="slider-img" alt="">
+          <img src="assets/4.jpg" class="slider-img" alt="">
+          <img src="assets/5.jpg" class="slider-img" alt="">
+          <img src="assets/6.jpg" class="slider-img" alt="">
+        </div>
+      </div>
+      <div class="all">
+        <button class="btn-left" id="slide-btn-left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="btn-right" id="slide-btn-right"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="container3">
+
+    <div class="product-card cc1">
+      <h2>Gaming accessories</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/1/1.jpg" alt="">
+        <div class="p1-text">Headsets</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/1/2.jpg" alt="">
+        <div class="p1-text">Keyboards</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/1/3.jpg" alt="">
+        <div class="p1-text">Computer mice</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/1/4.jpg" alt="">
+        <div class="p1-text">Chairs</div>
+      </div>
+
+      <a href="#">See more</a>
+    </div>
+    <div class="product-card">
+      <h2>Shop deals in Fashion</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/2/1.jpg" alt="">
+        <div class="p1-text">Jeans under $50</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/2/2.jpg" alt="">
+        <div class="p1-text">Tops under $25</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/2/3.jpg" alt="">
+        <div class="p1-text">Dresses under $30</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/2/4.jpg" alt="">
+        <div class="p1-text">Shoes under $50</div>
+      </div>
+
+      <a href="#">See all deals</a>
+    </div>
+    <div class="product-card">
+      <h2>Deals in PCs</h2>
+      <div class="product-img1B product-img"><img src="assets/product carts/3/1.jpg" alt=""></div>
+      <a href="#">Shop now</a>
+    </div>
+    <div class="product-card cc4">
+      <h2>Refresh your space</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/4/1.jpg" alt="">
+        <div class="p1-text">Dining</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/4/2.jpg" alt="">
+        <div class="p1-text">Home</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/4/3.jpg" alt="">
+        <div class="p1-text">Kitchen</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/4/4.jpg" alt="">
+        <div class="p1-text">Health and Beauty</div>
+      </div>
+
+      <a href="#">See more</a>
+    </div>
+
+    <div class="row-spe"></div>
+
+
+    <div class="product-card cc1">
+      <h2>Amazon Gadget Store</h2>
+      <div class="cc1-p-i1"><img src="assets/product carts/5/1.jpg" alt="">
+        <div class="p1-text">Smartphones</div>
+      </div>
+      <div class="cc1-p-i2"><img src="assets/product carts/5/2.jpg" alt="">
+        <div class="p1-text">Tablets</div>
+      </div>
+      <div class="cc1-p-i2 mid-cc1-p-i3"><img src="assets/product carts/5/3.jpg" alt="">
+        <div class="p1-text">Laptops</div>
+      </div>
+      <div class="cc1-p-i2"><img src="assets/product carts/5/4.jpg" alt="">
+        <div class="p1-text">TVs</div>
+      </div>
+      <a href="#">See more</a>
+    </div>
+    <div class="product-card">
+      <h2>Deals on gifts for Dad</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/6/1.jpg" alt="">
+        <div class="p1-text">Tech</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/6/2.jpg" alt="">
+        <div class="p1-text">Adventure gear</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/6/3.jpg" alt="">
+        <div class="p1-text">Unique finds</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/6/4.jpg" alt="">
+        <div class="p1-text">Health & wellness</div>
+      </div>
+
+      <a href="#">Shop all</a>
+    </div>
+    <div class="product-card">
+      <h2>Top Deal</h2>
+      <div class="product-img1Ba product-img"><img src="assets/product carts/7/1.jpg" alt=""></div>
+      <div class="dis-28">
+        <p>28% off</p><span>Limited time deal</span>
+      </div>
+      <div class="dis-pri"><span>$</span>288.00<p>List Price:
+        <div class="line">$399.00</div>
+        </p>
+        <hr>
+        <div class="dis-list">Medicube Age-R Booster Pro</div>
+      </div>
+
+      <a href="#">See all deals</a>
+    </div>
+    <div class="product-card cc4">
+      <h2>Fashion trends you like</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/8/1.jpg" alt="">
+        <div class="p1-text">Dresses</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/8/2.jpg" alt="">
+        <div class="p1-text">Knits</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/8/3.jpg" alt="">
+        <div class="p1-text">Jackets</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/8/4.jpg" alt="">
+        <div class="p1-text">Jewelry</div>
+      </div>
+
+      <a href="#">Explore more</a>
+    </div>
+
+    <div class="row-spe"></div>
+
+    <div class="pro-slider">
+      <h2>Best Sellers in Sports & Outdoors</h2>
+      <div class="proslider">
+        <button class="right-bar">
+          <div class="isl"><i class="fa-solid fa-chevron-left"></i></div>
+        </button>
+        <button class="right-bar left">
+          <div class="isl"><i class="fa-solid fa-chevron-right"></i></div>
+        </button>
+        <div class="slide">
+          <img class="simg" src="assets/slider/1/1.jpg" alt="">
+          <img class="simg" src="assets/slider/1/2.jpg" alt="">
+          <img class="simg" src="assets/slider/1/3.jpg" alt="">
+          <img class="simg" src="assets/slider/1/4.jpg" alt="">
+          <img class="simg" src="assets/slider/1/5.jpg" alt="">
+          <img class="simg" src="assets/slider/1/6.jpg" alt="">
+          <img class="simg" src="assets/slider/1/7.jpg" alt="">
+          <img class="simg" src="assets/slider/1/8.jpg" alt="">
+          <img class="simg" src="assets/slider/1/9.jpg" alt="">
+          <img class="simg" src="assets/slider/1/10.jpg" alt="">
+          <img class="simg" src="assets/slider/1/11.jpg" alt="">
+          <img class="simg" src="assets/slider/1/12.jpg" alt="">
+          <img class="simg" src="assets/slider/1/13.jpg" alt="">
+          <img class="simg" src="assets/slider/1/14.jpg" alt="">
+          <img class="simg" src="assets/slider/1/15.jpg" alt="">
+          <img class="simg" src="assets/slider/1/16.jpg" alt="">
+          <img class="simg" src="assets/slider/1/17.jpg" alt="">
+          <img class="simg" src="assets/slider/1/18.jpg" alt="">
+          <img class="simg" src="assets/slider/1/19.jpg" alt="">
+          <img class="simg" src="assets/slider/1/20.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="row-spe"></div>
+
+
+
+    <div class="product-card cc1">
+      <h2>Level up your gaming</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/9/1.jpg" alt="">
+        <div class="p1-text">PC gaming</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/9/2.jpg" alt="">
+        <div class="p1-text">Xbox</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/9/3.jpg" alt="">
+        <div class="p1-text">PlayStation</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/9/4.jpg" alt="">
+        <div class="p1-text">Nintendo Switch</div>
+      </div>
+
+      <a href="#">Shop the latest products in 3D</a>
+    </div>
+    <div class="product-card">
+      <h2>Level up your beauty routine</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/10/1.jpg" alt="">
+        <div class="p1-text">Makeup</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/10/2.jpg" alt="">
+        <div class="p1-text">Brushes</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/10/3.jpg" alt="">
+        <div class="p1-text">Sponges</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/10/4.jpg" alt="">
+        <div class="p1-text">Mirrors</div>
+      </div>
+
+      <a href="#">See more</a>
+    </div>
+    <div class="product-card">
+      <h2>Shop activity trackers and smartwatches</h2>
+      <div class="product-img1B product-img sp1"><img src="assets/product carts/11/1.jpg" alt=""></div>
+      <a href="#">Shop now</a>
+    </div>
+    <div class="product-card cc4">
+      <h2>Refresh your space</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/12/1.jpg" alt="">
+        <div class="p1-text">Dining</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/12/2.jpg" alt="">
+        <div class="p1-text">Home</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/12/3.jpg" alt="">
+        <div class="p1-text">Kitchen</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/12/4.jpg" alt="">
+        <div class="p1-text">Health and Beauty</div>
+      </div>
+
+      <a href="#">See more</a>
+    </div>
+
+    <div class="row-spe"></div>
+
+    <div class="pro-slider">
+      <h2>Best Sellers in Sports & Outdoors</h2>
+      <div class="proslider">
+        <button class="right-bar">
+          <div class="isl"><i class="fa-solid fa-chevron-left"></i></div>
+        </button>
+        <button class="right-bar left">
+          <div class="isl"><i class="fa-solid fa-chevron-right"></i></div>
+        </button>
+        <div class="slide">
+          <img class="simg" src="assets/slider/2/1.jpg" alt="">
+          <img class="simg" src="assets/slider/2/2.jpg" alt="">
+          <img class="simg" src="assets/slider/2/3.jpg" alt="">
+          <img class="simg" src="assets/slider/2/4.jpg" alt="">
+          <img class="simg" src="assets/slider/2/5.jpg" alt="">
+          <img class="simg" src="assets/slider/2/6.jpg" alt="">
+          <img class="simg" src="assets/slider/2/7.jpg" alt="">
+          <img class="simg" src="assets/slider/2/8.jpg" alt="">
+          <img class="simg" src="assets/slider/2/9.jpg" alt="">
+          <img class="simg" src="assets/slider/2/10.jpg" alt="">
+          <img class="simg" src="assets/slider/2/11.jpg" alt="">
+          <img class="simg" src="assets/slider/2/12.jpg" alt="">
+          <img class="simg" src="assets/slider/2/13.jpg" alt="">
+          <img class="simg" src="assets/slider/2/14.jpg" alt="">
+          <img class="simg" src="assets/slider/2/15.jpg" alt="">
+          <img class="simg" src="assets/slider/2/16.jpg" alt="">
+          <img class="simg" src="assets/slider/2/17.jpg" alt="">
+          <img class="simg" src="assets/slider/2/18.jpg" alt="">
+          <img class="simg" src="assets/slider/2/19.jpg" alt="">
+          <img class="simg" src="assets/slider/2/20.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="row-spe"></div>
+
+    <div class="product-card lf1">
+      <h2>Player's paradise starts here</h2>
+      <div class="product-img1B product-img"><img src="assets/product carts/13/1.jpg" alt=""></div>
+      <a href="#">Shop video games</a>
+    </div>
+    <div class="product-card">
+      <h2>Gaming merchandise</h2>
+      <div class="product-img1 product-img"><img src="assets/product carts/14/1.jpg" alt="">
+        <div class="p1-text">Apparel</div>
+      </div>
+
+      <div class="product-img2 product-img"><img src="assets/product carts/14/2.jpg" alt="">
+        <div class="p1-text">Hats</div>
+      </div>
+
+      <div class="product-img3 product-img"><img src="assets/product carts/14/3.jpg" alt="">
+        <div class="p1-text">Action figures</div>
+      </div>
+
+      <div class="product-img4 product-img"><img src="assets/product carts/14/4.jpg" alt="">
+        <div class="p1-text">Mugs</div>
+      </div>
+
+      <a href="#">See more</a>
+    </div>
+    <div class="product-card">
+      <h2>Laptops for every need</h2>
+      <div class="product-img1B product-img"><img src="assets/product carts/13/2.jpg" alt=""></div>
+      <a href="#">Find your laptop here</a>
+    </div>
+    <div class="product-card ll1">
+      <h2>Creating business solutions</h2>
+      <div class="product-img1B product-img"><img src="assets/product carts/13/3.jpg" alt=""></div>
+      <a href="#">See more software products</a>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+<footer>
+  <div class="back"><a href="#">Back to top</a></div>
+  <div class="footer2">
+    <div class="foot2">
+      <div class="foot2-con">
+        <div class="li1">
+          <ul>
+            <span class="sp1">Get to Know Us</span>
+            <div class="space"></div>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">About Amazon</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Amazon Devices</a>
+            <a href="#">Amazon Science</a>
+          </ul>
+        </div>
+
+        <div class="col-sep"></div>
+
+        <div class="li1 li2">
+          <ul>
+            <span class="sp1">Make Money with Us</span>
+            <div class="space"></div>
+            <a href="#">Sell products on Amazon</a>
+            <a href="#">Sell on Amazon Business</a>
+            <a href="#">Sell apps on Amazon</a>
+            <a href="#">Become an Affiliate</a>
+            <a href="#">Advertise Your Products</a>
+            <a href="#">Self-Publish with Us</a>
+            <a href="#">Host an Amazon Hub</a>
+            <a href="#">›See More Make Money with Us</a>
+          </ul>
+        </div>
+
+        <div class="col-sep"></div>
+
+        <div class="li1 li3">
+          <ul>
+            <span class="sp1">Amazon Payment Products</span>
+            <div class="space"></div>
+            <a href="#">Amazon Business Card</a>
+            <a href="#">Shop with Points</a>
+            <a href="#">Reload Your Balance</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Amazon Currency Converter</a>
+          </ul>
+        </div>
+
+        <div class="col-sep"></div>
+
+        <div class="li1 li4">
+          <ul>
+            <span class="sp1">Let Us Help You</span>
+            <div class="space"></div>
+            <a href="#">Amazon and COVID-19</a>
+            <a href="#">Your Account</a>
+            <a href="#">Your Orders</a>
+            <a href="#">Shipping Rates & Policies</a>
+            <a href="#">Returns & Replacements</a>
+            <a href="#">Manage Your Content and Devices</a>
+            <a href="#">Amazon Assistant</a>
+            <a href="#">Help</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer3">
+      <div class="foot3">
+        <div class="logo2-con"><img src="assets/logo-foot.PNG" width="76px" height="23px" alt=""></div>
+        <div class="foot3-boxs">
+          <div class="world-foot">
+            <img src="assets/world-foot.PNG" width="15px" height="15px" alt="">
+            <div class="foot-eng">English</div>
+            <ul class="up-down">
+              <div class="uu"><i class="fa-solid fa-caret-up"></i></div>
+              <div class="dd"><i class="fa-solid fa-caret-down"></i></div>
+            </ul>
+          </div>
+          <div class="foot-usd">
+            <span>$</span>
+            <div class="usd">USD - U.S. Dollar</div>
+          </div>
+          <div class="usa">
+            <div class="us-logo"><img src="assets/usa.png" width="16px" height="10px" alt=""></div>
+            <div class="usd">United States</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer4">
+      <div class="foot4">
+        <div class="flc1">
+          <div class="fli fli1">
+            <ul>
+              <span>Amazon Music</span>
+              <a href="#">Stream millions of songs</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli2">
+            <ul>
+              <span>Amazon Ads</span>
+              <a href="#">Reach customers wherever they spend their time</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli3">
+            <ul>
+              <span>6pm</span>
+              <a href="#">Score deals</a>
+              <a href="#">on fashion brands</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli4">
+            <ul>
+              <span>AbeBooks</span>
+              <a href="#">Books, art & collectibles</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli5">
+            <ul>
+              <span>ACX</span>
+              <a href="#">Audiobook Publishing Made Easy</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli6">
+            <ul>
+              <span>Sell on Amazon</span>
+              <a href="#">Start a Selling Account</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli7">
+            <ul>
+              <span>Amazon</span>
+              <div class="sppp1">Business</div>
+              <div class="sppp1-space"></div>
+              <a href="#">Everything</a>
+              <a href="#">For</a>
+              <a href="#">Your Business</a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lfi-row-sep"></div>
+
+        <div class="flc1">
+          <div class="fli fli1">
+            <ul>
+
+              <span>AmazonGlobal</span>
+              <a href="#">Ship Orders Internationally</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli2">
+            <ul>
+              <span>Home Services</span>
+              <a href="#">Experienced Pros Happiness Guarantee</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli3">
+            <ul>
+              <span>Amazon Web</span>
+              <div class="sppp1">Services</div>
+              <div class="sppp1-space"></div>
+              <a href="#">Scalable Cloud Computing Services</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli4">
+            <ul>
+
+              <span>Audible</span>
+              <a href="#">Listen to Books &</a>
+              <a href="#">Original</a>
+              <a href="#">Audio Performances</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli5">
+            <ul>
+
+              <span>Box Office Mojo</span>
+              <a href="#">Find Movie</a>
+              <a href="#">Box Office Data</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli6">
+            <ul>
+              <span>Goodreads</span>
+              <a href="#">Book reviews</a>
+              <a href="#">& recommendations </a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli7">
+            <ul>
+
+              <span>IMDb</span>
+              <a href="#">Movies, TV</a>
+              <a href="#">& Celebrities</a>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="lfi-row-sep"></div>
+
+        <div class="flc1">
+          <div class="fli fli1">
+            <ul>
+              <span>IMDbPro</span>
+              <a href="#">Get Info Entertainment Professionals Need</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli2">
+            <ul>
+
+              <span>Kindle Direct</span>
+              <div class="sppp1">Publishing</div>
+              <div class="sppp1-space"></div>
+              <a href="#">Indie Digital & Print Publishing Made Easy</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli3">
+            <ul>
+              <span>Prime Video</span>
+              <div class="sppp1">Direct</div>
+              <div class="sppp1-space"></div>
+              <a href="#">Video Distribution Made Easy</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli4">
+            <ul>
+
+
+              <span>Shopbop</span>
+              <a href="#">Designer</a>
+              <a href="#">Fashion Brands</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli5">
+            <ul>
+              <span>Woot!</span>
+              <a href="#">Deals and</a>
+              <a href="#">Shenanigans</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli6">
+            <ul>
+
+
+
+              <span>Zappos</span>
+              <a href="#">Shoes &</a>
+              <a href="#">Clothing</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli7">
+            <ul>
+              <span>Ring</span>
+              <a href="#">Smart Home</a>
+              <a href="#">Security Systems</a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lfi-row-sep"></div>
+
+        <div class="flc1">
+          <div class="fli fli1">
+
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli2">
+            <ul>
+
+
+
+
+              <span>eero WiFi</span>
+              <a href="#">Stream 4K Video</a>
+              <a href="#">in Every Room</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli3">
+            <ul>
+              <span>Blink</span>
+              <a href="#">Smart Security</a>
+              <a href="#">for Every Home</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli4">
+            <ul>
+              <span>Neighbors App</span>
+              <a href="#">Real-Time Crime</a>
+              <a href="#">& Safety Alerts</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli5">
+            <ul>
+              <span>Amazon Subscription</span>
+              <div class="sppp1">Boxes</div>
+              <div class="sppp1-space"></div>
+              <a href="#">Top subscription boxes</a>
+              <a href="#">- right to your door</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli6">
+            <ul>
+              <span>PillPack</span>
+              <a href="#">Pharmacy Simplified</a>
+            </ul>
+          </div>
+          <div class="fl-col-sep"></div>
+          <div class="fli fli7">
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+
+    <div class="footer5">
+      <div class="foot5">
+        <div class="f5-col1">
+          <div class="f5-con1"><p>Conditions of Use</p></div>
+          <div class="f5-con2"><p>Privacy Notice</p></div>
+          <div class="f5-con3"><p>Consumer Health Data Privacy Disclosure</p></div>
+          <div class="f5-con4"><p>Your Ads Privacy Choices</p></div>
+          <img src="assets/cpa.png" width="29px" height="14px" alt="">
+        </div>
+        <div class="f5-col2">©2024, Amazon-clone, Developed by Siddu</div>
+      </div>
+
+    </div>
+
+
+  </div>
+</footer>
+
+</html>
